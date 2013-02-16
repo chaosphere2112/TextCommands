@@ -1,0 +1,23 @@
+/*
+Copyright (c) 2013 Samuel B. Fries
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+*/
+[
+    {"caption":"Character Value", "command":"char_value"},
+    {"caption":"Line Length", "command":"line_length"},
+    {"caption":"Snake To CamelCase", "command":"snake_to_camel_case"},
+    {"caption":"Underscore To Spaces", "command":"underscore_to_spaces"},
+    {"caption":"Integer Sequence", "command":"integer_sequence"},
+    {"caption":"Decimal To Hex", "command":"decimal_to_hex"},
+    {"caption":"Increment Selection", "command":"increment_selection"},
+    {"caption":"Decrement Selection", "command":"decrement_selection"},
+    {"caption":"Selection Length", "command":"selection_length"},
+    {"caption":"Sort Text", "command":"sort_text"},
+    {"caption":"Number of Selections", "command":"count_selection"},
+    {"caption":"Go To Character", "command":"go_to_char"}
+]
