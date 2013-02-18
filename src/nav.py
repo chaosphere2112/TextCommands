@@ -1,6 +1,4 @@
-<<<<<<< HEAD
-=======
-/*
+"""
 Copyright (c) 2013 Samuel B. Fries
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -19,20 +17,27 @@ FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
 COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN
 AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-*/
->>>>>>> 4828a1525deb272bf6e13b96eff0595cdad19132
-[
-    {"caption":"Character Value", "command":"char_value"},
-    {"caption":"Line Length", "command":"line_length"},
-    {"caption":"Snake To CamelCase", "command":"snake_to_camel_case"},
-    {"caption":"Underscore To Spaces", "command":"underscore_to_spaces"},
-    {"caption":"Integer Sequence", "command":"integer_sequence"},
-    {"caption":"Decimal To Hex", "command":"decimal_to_hex"},
-    {"caption":"Hex To Decimal", "command":"hex_to_decimal"},
-    {"caption":"Increment Selection", "command":"increment_selection"},
-    {"caption":"Decrement Selection", "command":"decrement_selection"},
-    {"caption":"Selection Length", "command":"selection_length"},
-    {"caption":"Sort Text", "command":"sort_text"},
-    {"caption":"Number of Selections", "command":"count_selection"},
-    {"caption":"Go To Character", "command":"go_to_char"}
-]
+"""
+
+import sublime
+import sublime_plugin
+
+"""
+    Commands for navigating the document
+"""
+
+"""
+    Selects and reveals the specified character
+"""
+
+
+class GoToCharCommand(sublime_plugin.TextCommand):
+    def run(self, edit):
+        self.view.window().show_input_panel("Go to Character #", "",
+                                            self.receive_text, None, None)
+
+    def receive_text(self, text):
+        int_text = int(text)
+        self.view.show_at_center(int_text)
+        self.view.sel().clear()
+        self.view.sel().add(sublime.Region(int_text, int_text + 1))

@@ -1,6 +1,4 @@
-<<<<<<< HEAD
-=======
-/*
+"""
 Copyright (c) 2013 Samuel B. Fries
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
@@ -19,20 +17,38 @@ FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
 COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN
 AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-*/
->>>>>>> 4828a1525deb272bf6e13b96eff0595cdad19132
-[
-    {"caption":"Character Value", "command":"char_value"},
-    {"caption":"Line Length", "command":"line_length"},
-    {"caption":"Snake To CamelCase", "command":"snake_to_camel_case"},
-    {"caption":"Underscore To Spaces", "command":"underscore_to_spaces"},
-    {"caption":"Integer Sequence", "command":"integer_sequence"},
-    {"caption":"Decimal To Hex", "command":"decimal_to_hex"},
-    {"caption":"Hex To Decimal", "command":"hex_to_decimal"},
-    {"caption":"Increment Selection", "command":"increment_selection"},
-    {"caption":"Decrement Selection", "command":"decrement_selection"},
-    {"caption":"Selection Length", "command":"selection_length"},
-    {"caption":"Sort Text", "command":"sort_text"},
-    {"caption":"Number of Selections", "command":"count_selection"},
-    {"caption":"Go To Character", "command":"go_to_char"}
-]
+"""
+
+import re
+
+"""
+    Common functions used by various classes
+"""
+
+
+def string_as_integer(string):
+    reg = re.compile("-?[0-9]+")
+    match = reg.match(string)
+    if match is not None:
+        return int(string[match.start():match.end()])
+    else:
+        return None
+
+
+def num_to_hex(num):
+    hex = "0123456789ABCDEF"
+
+    val = num
+    hexstr = ""
+
+    max_pow = 0
+    while 16 ** max_pow < val:
+        max_pow += 1
+
+    while max_pow > 0:
+        max_pow -= 1
+        hex_dig = val // 16 ** max_pow
+        val = val % 16 ** max_pow
+        hexstr += hex[hex_dig]
+
+    return hexstr
