@@ -26,6 +26,36 @@ You can benefit from my automation.
 So, enjoy a free pass to become more productive in your text editing. If you think of something to add, feel free to 
 either do a pull request or file a bug report.
 
+Command list:
+
+`Character Value`: Presents an alert that contains the value of each character selected.
+
+`Line Length`: Breaks a selection into multiple lines based on a maximum character length (breaks only on spaces)
+
+`Snake To CamelCase`: Converts "method\_names\_like_this" to "methodNamesLikeThis"
+
+`Underscore To Spaces`: Converts "names\_like\_this" to "names like this"
+
+`Integer Sequence`: Converts a series of selections to a numeric sequence from 0-N, where N is the number of selections.
+
+`Decimal To Hex`: Converts each selected number from decimal to hexadecimal.
+
+`Hex To Decimal`: Converts each selected number from hexadecimal to decimal.
+
+`Increment Selection`: Raises the value of each selected number by 1
+
+`Decrement Selection`: Lowers the value of each selected number by 1
+
+`Selection Length`: Presents a dialog informing you of the length of each selection you have.
+
+`Sort Text`: Sorts text
+
+`Number of Selections`: Presents a dialog informing you of the number of selections you have.
+
+`Go To Character`: Jumps to a specified character number, moving it into view.
+
+
+
     Copyright © 2013 Samuel B. Fries
 
     Permission is hereby granted, free of charge, to any person obtaining a copy of this software 
