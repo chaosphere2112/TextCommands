@@ -36,3 +36,14 @@ class UnderscoreToSpacesCommand(sublime_plugin.TextCommand):
             val = " ".join(val.split("_"))
 
             self.view.replace(edit, region, val)
+
+
+class SpacesToUnderscoresCommand(sublime_plugin.TextCommand):
+    def run(self, edit):
+        view = self.view
+        regions = view.sel()
+
+        for region in regions:
+            val = view.substr(region)
+            val = "_".join(val.split(" "))
+            self.view.replace(edit, region, val)

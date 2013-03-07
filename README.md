@@ -36,6 +36,8 @@ Command list:
 
 `Underscore To Spaces`: Converts "names\_like\_this" to "names like this"
 
+`Space To Underscores`: Converts "names like this" to "names\_like\_this"
+
 `Integer Sequence`: Converts a series of selections to a numeric sequence from 0-N, where N is the number of selections.
 
 `Decimal To Hex`: Converts each selected number from decimal to hexadecimal.
