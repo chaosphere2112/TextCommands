@@ -3,7 +3,7 @@
     {"caption":"TextCommands: Line Length", "command":"line_length"},
     {"caption":"TextCommands: Snake To CamelCase", "command":"snake_to_camel_case"},
     {"caption":"TextCommands: Underscore To Spaces", "command":"underscore_to_spaces"},
-    {"caption":"TextCommands: Spaces to Underscores", "command":"underscore_to_spaces"},
+    {"caption":"TextCommands: Spaces to Underscores", "command":"spaces_to_underscores"},
     {"caption":"TextCommands: Integer Sequence", "command":"integer_sequence"},
     {"caption":"TextCommands: Decimal To Hex", "command":"decimal_to_hex"},
     {"caption":"TextCommands: Hex To Decimal", "command":"hex_to_decimal"},
