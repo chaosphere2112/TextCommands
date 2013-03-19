@@ -10,7 +10,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 import sublime
 import sublime_plugin
-
+import re
 
 class SnakeToCamelCase(sublime_plugin.TextCommand):
     def run(self, edit):
@@ -23,6 +23,39 @@ class SnakeToCamelCase(sublime_plugin.TextCommand):
             val = val.split("_")[0] + "".join(strings)
             view.replace(edit, region, val)
 
+class CamelCaseToSnake(sublime_plugin.TextCommand):
+    def run(self, edit):
+        view = self.view
+        regions = view.sel()
+
+        self.split_re = re.compile('([A-Z]+)')
+
+        for region in regions:
+            val       = view.substr(region)
+            lines     = val.split('\n')
+            lines_sub = [self.process_line(line) for line in lines]
+            sub       = "\n".join(lines_sub)
+
+            view.replace(edit, region, sub)
+
+    def process_line(self, line):
+
+        def process_token(tkn):
+            char_first = tkn[0]
+            return '_' + tkn.lower() if char_first.isupper() else tkn
+
+        matches = self.split_re.split(line)
+        matches = matches[1:] if matches[0] == '' else matches
+        matches = matches[0:-1] if matches[-1] == '' else matches
+
+        if len(matches) > 0:
+            head     = [matches[0].lower()]
+            rest     = [process_token(tkn) for tkn in matches[1:]]
+            words    = head + rest
+            sentence = "".join(words)
+            return sentence
+        else:
+            return '';
 
 class UnderscoreToSpacesCommand(sublime_plugin.TextCommand):
     def run(self, edit):

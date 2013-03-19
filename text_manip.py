@@ -29,6 +29,22 @@ class SortTextCommand(sublime_plugin.TextCommand):
             values.sort()
             view.replace(edit, region, "\n".join(values))
 
+class RemoveDuplicateTextCommand(sublime_plugin.TextCommand):
+    def run(self, edit):
+        view = self.view
+        regions = view.sel()
+
+        for region in regions:
+            values = view.substr(region).split("\n")
+
+            seen   = set()
+            result = []
+            for line in values:
+                if line not in seen:
+                    seen.add(line)
+                    result.append(line)
+
+            view.replace(edit, region, "\n".join(result))
 
 """
     Splits selected text into lines of a specified maximum length, breaking at words.
