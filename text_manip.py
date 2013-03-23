@@ -29,7 +29,8 @@ class SortTextCommand(sublime_plugin.TextCommand):
             values.sort()
             view.replace(edit, region, "\n".join(values))
 
-class RemoveDuplicateTextCommand(sublime_plugin.TextCommand):
+
+class RemoveDuplicateLinesCommand(sublime_plugin.TextCommand):
     def run(self, edit):
         view = self.view
         regions = view.sel()
@@ -37,7 +38,7 @@ class RemoveDuplicateTextCommand(sublime_plugin.TextCommand):
         for region in regions:
             values = view.substr(region).split("\n")
 
-            seen   = set()
+            seen = set()
             result = []
             for line in values:
                 if line not in seen:
