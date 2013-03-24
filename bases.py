@@ -31,6 +31,9 @@ class PerRegionTextCommand(sublime_plugin.TextCommand):
     def pre(self):
         pass
 
+    def post(self):
+        pass
+
     def per_region(self, region_text):
         return region_text
 
@@ -42,6 +45,8 @@ class PerRegionTextCommand(sublime_plugin.TextCommand):
         for region in regions:
             val = view.substr(region)
             view.replace(edit, region, self.per_region(val))
+
+        self.post()
 
 
 class PerLineTextCommand(PerRegionTextCommand):
