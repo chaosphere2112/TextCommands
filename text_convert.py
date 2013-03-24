@@ -21,8 +21,6 @@ TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 """
 
-import sublime
-import sublime_plugin
 import bases
 import re
 
@@ -63,26 +61,13 @@ class CamelCaseToSnake(bases.PerWordTextCommand):
         return converted
 
 
-class UnderscoreToSpacesCommand(sublime_plugin.TextCommand):
-    def run(self, edit):
-        view = self.view
-        regions = view.sel()
-
-        for region in regions:
-
-            val = view.substr(region)
-
-            val = " ".join(val.split("_"))
-
-            self.view.replace(edit, region, val)
+class UnderscoreToSpacesCommand(bases.PerRegionTextCommand):
+    def per_region(self, val):
+        val = " ".join(val.split("_"))
+        return val
 
 
-class SpacesToUnderscoresCommand(sublime_plugin.TextCommand):
-    def run(self, edit):
-        view = self.view
-        regions = view.sel()
-
-        for region in regions:
-            val = view.substr(region)
-            val = "_".join(val.split(" "))
-            self.view.replace(edit, region, val)
+class SpacesToUnderscoresCommand(bases.PerRegionTextCommand):
+    def per_region(self, val):
+        val = "_".join(val.split(" "))
+        return val
