@@ -24,6 +24,10 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 import bases
 import re
 
+"""
+    Converts every snake_cased_word to a CamelCasedWord
+"""
+
 
 class SnakeToCamelCase(bases.PerWordTextCommand):
     def per_word(self, word):
@@ -34,6 +38,10 @@ class SnakeToCamelCase(bases.PerWordTextCommand):
             word = "".join(strings)
 
         return word
+
+"""
+    Converts every CamelCasedWord to a snake_cased_word
+"""
 
 
 class CamelCaseToSnake(bases.PerWordTextCommand):
@@ -60,11 +68,19 @@ class CamelCaseToSnake(bases.PerWordTextCommand):
 
         return converted
 
+"""
+    Replaces all "_" characters with " " characters.
+"""
+
 
 class UnderscoreToSpacesCommand(bases.PerRegionTextCommand):
     def per_region(self, val):
         val = " ".join(val.split("_"))
         return val
+
+"""
+    Replaces all " " characters with "_" characters.
+"""
 
 
 class SpacesToUnderscoresCommand(bases.PerRegionTextCommand):
