@@ -51,7 +51,7 @@ Given some text:
 
     joe went there from here
 
-If you select `joe`, `went there`, `from`, and `here` each as its own selection and use the Sort Text command, you are left with this:
+If you select `joe`, `went there`, `from`, and `here` each as its own selection and use the `Sort Text` command, you are left with this:
 
     from here joe went there
 
