@@ -2,8 +2,7 @@ TextCommands
 ============
 
 Sublime Text 2 Plugin including a variety of commands for manipulating/navigating text
-
-================================================================================
+--------------------------------------------------------------------------------------
 
 There are things that humans excel at. Creativity, free thinking, visual processing.
 
@@ -26,37 +25,67 @@ You can benefit from my automation.
 So, enjoy a free pass to become more productive in your text editing. If you think of something to add, feel free to 
 either do a pull request or file a bug report.
 
-Command list:
 
-`Character Value`: Presents an alert that contains the value of each character selected.
+Text Conversion:
+----------------
 
-`Line Length`: Breaks a selection into multiple lines based on a maximum character length (breaks only on spaces)
+`Snake To CamelCase`: Converts "method\_names\_like_this" to "MethodNamesLikeThis"
 
-`Snake To CamelCase`: Converts "method\_names\_like_this" to "methodNamesLikeThis"
+`CamelCase to Snake`: Converts "MethodNamesLikeThis" to "method\_names\_like_this"
 
 `Underscore To Spaces`: Converts "names\_like\_this" to "names like this"
 
 `Space To Underscores`: Converts "names like this" to "names\_like\_this"
 
-`Integer Sequence`: Converts a series of selections to a numeric sequence from 0-N, where N is the number of selections.
 
-`Decimal To Hex`: Converts each selected number from decimal to hexadecimal.
+Text Manipulation:
+------------------
 
-`Hex To Decimal`: Converts each selected number from hexadecimal to decimal.
+`Remove Duplicate Lines`: Removes duplicate lines in each selection (duplicates only tracked inside each selection)
 
-`Increment Selection`: Raises the value of each selected number by 1
+`Line Length`: Breaks a selection into multiple lines based on a maximum character length (breaks only on spaces)
 
-`Decrement Selection`: Lowers the value of each selected number by 1
+`Sort Text`: Sorts your selections in place.
 
-`Selection Length`: Presents a dialog informing you of the length of each selection you have.
+Given some text:
 
-`Sort Text`: Sorts text
+    joe went there from here
 
-`Number of Selections`: Presents a dialog informing you of the number of selections you have.
+If you select `joe`, `went there`, `from`, and `here` each as its own selection and use the Sort Text command, you are left with this:
+
+    from here joe went there
+
+Text Navigation:
+----------------
 
 `Go To Character`: Jumps to a specified character number, moving it into view.
 
+Numeric Commands:
+-----------------
 
+`Integer Sequence`: Converts all selected integers into a numeric sequence from 0 to N, where N is the number of integers.
+
+`Decimal To Hex`: Converts all selected integers from decimal to hexadecimal.
+
+`Hex To Decimal`: Converts all selected numbers from hexadecimal to decimal.
+
+`Increment Selection`: Raises the value of all selected numbers by 1
+
+`Decrement Selection`: Lowers the value of all selected numbers by 1
+
+
+Text Info:
+----------
+
+`Character Value`: Presents an alert that contains the value of each character selected.
+
+`Selection Length`: Presents a dialog informing you of the number of characters you have selected (added together for each selection)
+
+`Number of Selections`: Presents a dialog informing you of the number of selections you have.
+
+
+License:
+--------
 
     Copyright © 2013 Samuel B. Fries
 
