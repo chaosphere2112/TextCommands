@@ -34,6 +34,7 @@ import bases
 
 class IntegerSequenceCommand(bases.PerIntegerTextCommand):
     def pre(self):
+        super(IntegerSequenceCommand, self).pre()
         self.ind = 0
 
     def per_int(self, intval):
