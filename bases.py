@@ -53,7 +53,7 @@ class PerLineTextCommand(PerRegionTextCommand):
 
     def per_region(self, region):
         lines = region.split(self.linebreak)
-        return self.linebreak.join(map(per_line, lines))
+        return self.linebreak.join(map(self.per_line, lines))
 
 
 class PerWordTextCommand(PerRegionTextCommand):
