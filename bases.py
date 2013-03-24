@@ -25,6 +25,7 @@ import sublime
 import sublime_plugin
 import re
 import os
+from util import *
 
 
 class PerRegionTextCommand(sublime_plugin.TextCommand):
@@ -82,3 +83,16 @@ class PerWordTextCommand(PerRegionTextCommand):
             word_result += self.per_word(word)
 
         return word_result
+
+
+class PerIntegerTextCommand(PerRegionTextCommand):
+    def per_int(self, intval):
+        pass
+
+    def per_region(self, region):
+        val = string_as_integer(region)
+
+        if val is not None:
+            return self.per_int(val)
+
+        return region
