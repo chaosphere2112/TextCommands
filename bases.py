@@ -85,14 +85,14 @@ class PerWordTextCommand(PerRegionTextCommand):
         return word_result
 
 
-class PerIntegerTextCommand(PerRegionTextCommand):
+class PerIntegerTextCommand(PerWordTextCommand):
     def per_int(self, intval):
         pass
 
-    def per_region(self, region):
-        val = string_as_integer(region)
+    def per_word(self, word):
+        val = string_as_integer(word)
 
         if val is not None:
             return self.per_int(val)
 
-        return region
+        return word
