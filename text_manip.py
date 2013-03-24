@@ -23,7 +23,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 import sublime
 import sublime_plugin
-import bases
+
 import os
 
 """
@@ -61,6 +61,10 @@ class SortTextCommand(sublime_plugin.TextCommand):
 
             view.replace(edit, newregion, textval)
 
+"""
+    Removes duplicate lines of text, per selection.
+"""
+
 
 class RemoveDuplicateLinesCommand(sublime_plugin.TextCommand):
     def run(self, edit):
@@ -68,7 +72,7 @@ class RemoveDuplicateLinesCommand(sublime_plugin.TextCommand):
         regions = view.sel()
 
         for region in regions:
-            values = view.substr(region).split("\n")
+            values = view.substr(region).split(os.linesep)
 
             seen = set()
             result = []
@@ -77,7 +81,7 @@ class RemoveDuplicateLinesCommand(sublime_plugin.TextCommand):
                     seen.add(line)
                     result.append(line)
 
-            view.replace(edit, region, "\n".join(result))
+            view.replace(edit, region, os.linesep.join(result))
 
 """
     Splits selected text into lines of a specified maximum length, breaking at words.
