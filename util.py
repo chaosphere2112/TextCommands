@@ -25,19 +25,4 @@ def string_as_integer(string):
 
 
 def num_to_hex(num):
-    hex = "0123456789ABCDEF"
-
-    val = num
-    hexstr = ""
-
-    max_pow = 0
-    while 16 ** max_pow < val:
-        max_pow += 1
-
-    while max_pow > 0:
-        max_pow -= 1
-        hex_dig = val // 16 ** max_pow
-        val = val % 16 ** max_pow
-        hexstr += hex[hex_dig]
-
-    return hexstr
+    return hex(num)[2:]
