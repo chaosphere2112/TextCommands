@@ -45,8 +45,8 @@ class IntegerSequenceCommand(bases.PerIntegerTextCommand):
 """
 
 
-class HexToDecimalCommand(bases.PerRegionTextCommand):
-    def per_region(self, text):
+class HexToDecimalCommand(bases.PerWordTextCommand):
+    def per_word(self, text):
         try:
             int_val = int(text, base=16)
             return str(int_val)
