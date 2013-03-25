@@ -24,7 +24,6 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 import sublime
 import sublime_plugin
 import re
-import os
 from util import *
 
 
@@ -52,7 +51,7 @@ class PerRegionTextCommand(sublime_plugin.TextCommand):
 
 class PerLineTextCommand(PerRegionTextCommand):
     def pre(self):
-        self.linebreak = os.linesep
+        self.linebreak = "\n"
 
     def per_line(self, line):
         return line

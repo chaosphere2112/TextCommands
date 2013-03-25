@@ -24,8 +24,6 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 import sublime
 import sublime_plugin
 
-import os
-
 """
     Commands that manipulate textual data
 """
@@ -72,16 +70,16 @@ class RemoveDuplicateLinesCommand(sublime_plugin.TextCommand):
         regions = view.sel()
 
         for region in regions:
-            values = view.substr(region).split(os.linesep)
-
+            line_regions = view.split_by_newlines(region)
             seen = set()
             result = []
-            for line in values:
-                if line not in seen:
-                    seen.add(line)
-                    result.append(line)
+            for line in line_regions:
+                value = view.substr(line)
+                if value not in seen:
+                    seen.add(value)
+                    result.append(value)
 
-            view.replace(edit, region, os.linesep.join(result))
+            view.replace(edit, region, "\n".join(result))
 
 """
     Splits selected text into lines of a specified maximum length, breaking at words.
