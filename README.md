@@ -4,6 +4,11 @@ TextCommands
 Sublime Text 2 Plugin including a variety of commands for manipulating/navigating text
 --------------------------------------------------------------------------------------
 
+
+![Demo](https://raw.github.com/chaosphere2112/TextCommands/screenshots/demo.gif)
+
+
+
 There are things that humans excel at. Creativity, free thinking, visual processing.
 
 Editing text is not one of those things.
