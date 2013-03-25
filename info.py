@@ -23,7 +23,11 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 import sublime
 import sublime_plugin
-import bases
+try:
+    import TextCommands.bases
+except ImportError:
+    import bases
+
 """
     Commands that give the user information about their selections
 """

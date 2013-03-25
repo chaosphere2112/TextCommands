@@ -21,8 +21,11 @@ TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 """
 
-import bases
 import re
+try:
+    import TextCommands.bases
+except ImportError:
+    import bases
 
 """
     Converts every snake_cased_word to a CamelCasedWord

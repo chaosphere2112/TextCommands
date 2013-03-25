@@ -24,7 +24,10 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 import sublime
 import sublime_plugin
 import re
-from util import *
+try:
+    from TextCommands.util import *
+except ImportError:
+    from util import *
 
 
 class PerRegionTextCommand(sublime_plugin.TextCommand):
