@@ -1,7 +1,7 @@
 TextCommands
 ============
 
-Sublime Text 2 Plugin including a variety of commands for manipulating/navigating text
+Sublime Text 2 (and 3!) Plugin including a variety of commands for manipulating/navigating text
 --------------------------------------------------------------------------------------
 
 
@@ -48,7 +48,7 @@ Text Manipulation:
 
 `Remove Duplicate Lines`: Removes duplicate lines in each selection (duplicates only tracked inside each selection)
 
-`Line Length`: Breaks a selection into multiple lines based on a maximum character length (breaks only on spaces)
+`Line Length`: Breaks a selection into multiple lines based on a maximum character length (breaks only on spaces) _(does not work in Sublime Text 3 beta 3021)_
 
 `Sort Text`: Sorts your selections in place.
 
