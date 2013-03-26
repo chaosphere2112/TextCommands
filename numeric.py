@@ -23,7 +23,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 try:
     from TextCommands.util import *
-    import TextCommands.bases
+    import TextCommands.bases as bases
 except ImportError:
     from util import *
     import bases

@@ -24,7 +24,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 import sublime
 import sublime_plugin
 try:
-    import TextCommands.bases
+    import TextCommands.bases as bases
 except ImportError:
     import bases
 
@@ -46,7 +46,9 @@ class CharValueCommand(sublime_plugin.TextCommand):
 
         for region in regions:
             char = view.substr(region)
-            messages.append("%s: %s" % (char, hex(ord(char))))
+            length = region.b - region.a
+            for i in range(length):
+                messages.append("%s: %s" % (char[i], hex(ord(char[i]))))
 
         sublime.message_dialog("Selected characters: \n%s" % ", ".join(messages))
 

@@ -32,7 +32,7 @@ import sublime_plugin
     Selects and reveals the specified character
 """
 
-
+#May need looking at for ST3
 class GoToCharCommand(sublime_plugin.TextCommand):
     def run(self, edit):
         self.view.window().show_input_panel("Go to Character #", "",

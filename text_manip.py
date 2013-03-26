@@ -104,14 +104,17 @@ class LineLengthCommand(sublime_plugin.TextCommand):
 
             sub_words = sub.split()
 
+            #Each string in here will become a line
             lines = [""]
-
             for word in sub_words:
                 if len(lines[-1]) + len(word) > length:
                     lines.append(word)
                 else:
-                    lines[-1] += " " + word
-
+                    lines[-1] = "%s %s" % (lines[-1], word)
+            #This doesn't appear to be working in ST3.  
+            #Data's all fine up to this point, but 
+            #it's not changing the value at all.
+            print(self.edit)
             view.replace(self.edit, selected, "\n".join(lines))
 
     def run(self, edit):
