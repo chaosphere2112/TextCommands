@@ -14,5 +14,7 @@
     {"caption":"TextCommands: Sort Text", "command":"sort_text"},
     {"caption":"TextCommands: Remove Duplicate Lines", "command":"remove_duplicate_lines"},
     {"caption":"TextCommands: Number of Selections", "command":"count_selection"},
-    {"caption":"TextCommands: Go To Character", "command":"go_to_char"}
+    {"caption":"TextCommands: Go To Character", "command":"go_to_char"},
+    {"caption":"TextCommands: Shift Selections Left", "command":"shift_selections_left"},
+    {"caption":"TextCommands: Shift Selections Right", "command":"shift_selections_right"}
 ]

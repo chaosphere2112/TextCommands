@@ -60,6 +60,10 @@ If you select `joe`, `went there`, `from`, and `here` each as its own selection 
 
     from here joe went there
 
+`Shift Selections Left`: Shifts all selections left one character.
+
+`Shift Selections Right`: Shifts all selections right one character.
+
 Text Navigation:
 ----------------
 

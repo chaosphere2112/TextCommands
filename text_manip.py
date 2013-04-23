@@ -81,6 +81,66 @@ class RemoveDuplicateLinesCommand(sublime_plugin.TextCommand):
 
             view.replace(edit, region, "\n".join(result))
 
+
+"""
+    Shifts selected text left
+"""
+
+
+class ShiftSelectionsLeftCommand   (sublime_plugin.TextCommand):
+    def run(self, edit):
+        view = self.view
+        regions = view.sel()
+
+        new_regions = []
+
+        for region in regions:
+
+            if (region.begin() == 0):
+                new_regions.append(region)
+                continue
+
+            text = view.substr(region)
+            view.erase(edit, region)
+            view.insert(edit, region.begin() - 1, text)
+            new_regions.append(sublime.Region(region.begin() - 1, region.end() - 1))
+
+        view.sel().clear()
+
+        for sel in new_regions:
+            view.sel().add(sel)
+
+
+"""
+    Shifts selected text right
+"""
+
+
+class ShiftSelectionsRightCommand(sublime_plugin.TextCommand):
+    def run(self, edit):
+        view = self.view
+        regions = view.sel()
+
+        new_regions = []
+
+        for region in regions:
+            #Skip regions that will move outside the bounds of the file
+            if (region.end() + 1 > view.size()):
+                new_regions.append(region)
+                continue
+
+            text = view.substr(region)
+
+            view.erase(edit, region)
+            view.insert(edit, region.begin() + 1, text)
+            new_regions.append(sublime.Region(region.begin() + 1, region.end() + 1))
+
+        view.sel().clear()
+
+        for sel in new_regions:
+            view.sel().add(sel)
+
+
 """
     Splits selected text into lines of a specified maximum length, breaking at words.
 """
