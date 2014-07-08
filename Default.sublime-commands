@@ -5,6 +5,12 @@
     {"caption":"TextCommands: CamelCase To Snake", "command":"camel_case_to_snake"},
     {"caption":"TextCommands: Underscore To Spaces", "command":"underscore_to_spaces"},
     {"caption":"TextCommands: Spaces to Underscores", "command":"spaces_to_underscores"},
+
+    {"caption":"TextCommands: Dashes To Spaces", "command":"dashes_to_spaces"},
+    {"caption":"TextCommands: Spaces to Dashes", "command":"spaces_to_dashes"},
+    {"caption":"TextCommands: Dots To Spaces", "command":"dots_to_spaces"},
+    {"caption":"TextCommands: Spaces to Dots", "command":"spaces_to_dots"},
+
     {"caption":"TextCommands: Integer Sequence", "command":"integer_sequence"},
     {"caption":"TextCommands: Decimal To Hex", "command":"decimal_to_hex"},
     {"caption":"TextCommands: Hex To Decimal", "command":"hex_to_decimal"},

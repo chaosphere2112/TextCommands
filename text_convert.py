@@ -82,6 +82,16 @@ class UnderscoreToSpacesCommand(bases.PerRegionTextCommand):
         return val
 
 """
+    Replaces all "-" characters with " " characters.
+"""
+
+
+class DashesToSpacesCommand(bases.PerRegionTextCommand):
+    def per_region(self, val):
+        val = " ".join(val.split("-"))
+        return val
+
+"""
     Replaces all " " characters with "_" characters.
 """
 
@@ -89,4 +99,34 @@ class UnderscoreToSpacesCommand(bases.PerRegionTextCommand):
 class SpacesToUnderscoresCommand(bases.PerRegionTextCommand):
     def per_region(self, val):
         val = "_".join(val.split(" "))
+        return val
+
+"""
+    Replaces all " " characters with "-" characters.
+"""
+
+
+class SpacesToDashesCommand(bases.PerRegionTextCommand):
+    def per_region(self, val):
+        val = "-".join(val.split(" "))
+        return val
+
+"""
+    Replaces all "." characters with " " characters.
+"""
+
+
+class DotsToSpacesCommand(bases.PerRegionTextCommand):
+    def per_region(self, val):
+        val = " ".join(val.split("."))
+        return val
+
+"""
+    Replaces all " " characters with "." characters.
+"""
+
+
+class SpacesToDotsCommand(bases.PerRegionTextCommand):
+    def per_region(self, val):
+        val = ".".join(val.split(" "))
         return val
